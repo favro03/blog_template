@@ -7,13 +7,13 @@ const blogSchema = mongoose.Schema(
           authorFirstName: {type: String},
           authorLastName: {type: String},
           Date: {type: String},
-          post: {type: string},
+          post: {type: String},
           category: {type: String},
           isFeature: {type: Boolean},
           isArchive: {type: Boolean},
     },
     
 );
-const Blog = mongoose.model('Tracker', blogSchema)
+const Blog = mongoose.model('Blogs', blogSchema)
 
 export default Blog
