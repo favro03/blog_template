@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 
-app.use('/api/blog', blogRoutes)
+app.use('/api/admin/createpost', blogRoutes)
 app.use('/api/users', userRoutes);
 
 
