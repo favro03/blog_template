@@ -58,7 +58,7 @@ const Header = ({isAdmin}) => {
               </LinkContainer>
 
              {showAdminLinks && userInfo && ( // Show "Create Post" only when admin is logged in
-                <LinkContainer to='/admin/createpost'>
+                <LinkContainer to='/admin/posts'>
                   <Nav.Link>Create Post</Nav.Link>
                 </LinkContainer>
               )}

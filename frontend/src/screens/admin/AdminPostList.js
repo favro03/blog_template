@@ -12,11 +12,11 @@ import {
 } from '../../slices/postsApiSlice';
 import { toast } from 'react-toastify';
 
-const AdminCreatePost = () => {
+const AdminPostList = () => {
   // const { pageNumber } = useParams();
 
   const { data, isLoading, error, refetch } = useGetPostsQuery({
-    // pageNumber,
+   
   });
 
   const [deletePost, { isLoading: loadingDelete }] =
@@ -46,7 +46,7 @@ const AdminCreatePost = () => {
       }
     }
   };
-const posts = data
+
   return (
     <>
       <Row className='align-items-center'>
@@ -73,20 +73,18 @@ const posts = data
               <tr>
                 <th>ID</th>
                 <th>Title</th>
-                <th>DATE</th>
-               
+                <th>Date</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {posts.map((post) => (
+              {data.posts.map((post) => (
                 <tr key={post._id}>
                   <td>{post._id}</td>
                   <td>{post.title}</td>
                   <td>{post.date}</td>
-                
                   <td>
-                    <LinkContainer to={`/admin/createpost/${post._id}/edit`}>
+                    <LinkContainer to={`/admin/posts/${post._id}/edit`}>
                       <Button variant='light' className='btn-sm mx-2'>
                         <FaEdit />
                       </Button>
@@ -110,4 +108,4 @@ const posts = data
   );
 };
 
-export default AdminCreatePost;
+export default AdminPostList;

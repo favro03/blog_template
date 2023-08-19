@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import colors from 'colors';
 import users from './data/users.js';
-import blogs from './data/blogs.js';
+import posts from './data/posts.js';
 import userList from './data/userList.js';
 import User from './models/userModel.js';
-import Blog from './models/blogModel.js';
+import Post from './models/postModel.js';
 import UserList from './models/userListModel.js';
 import connectDB from './config/db.js';
 
@@ -15,7 +15,7 @@ connectDB();
 
 const importData = async () => {
   try {
-    await Blog.deleteMany();
+    await Post.deleteMany();
     await UserList.deleteMany();
     await User.deleteMany();
 
@@ -23,11 +23,11 @@ const importData = async () => {
 
     const adminUser = createdUsers[0]._id;
 
-    const sampleBlogs = blogs.map((blog) => {
-      return { ...blog };
+    const samplePosts = posts.map((post) => {
+      return { ...post };
     });
 
-    await Blog.insertMany(sampleBlogs);
+    await Post.insertMany(samplePosts);
 
     const sampleUserList = userList.map((userList) => {
         return { ...userList};
@@ -45,7 +45,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
-    await Blog.deleteMany();
+    await Post.deleteMany();
     await UserList.deleteMany();
     await User.deleteMany();
 
