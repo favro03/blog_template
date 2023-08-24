@@ -20,6 +20,7 @@ app.use(cookieParser());
 
 
 app.use('/api/admin/posts', postRoutes)
+app.use('api/post', postRoutes)
 app.use('/api/users', userRoutes);
 
 
