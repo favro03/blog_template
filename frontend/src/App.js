@@ -8,6 +8,7 @@ import AdminRoute from './components/AdminRoute';
 import AdminHomeScreen from './screens/admin/AdminHomeScreen';
 import AdminPostList from './screens/admin/AdminPostList';
 import AdminPostEditScreen from './screens/admin/AdminPostEditScreen'
+import PostScreen from './screens/PostScreen'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Container>
             <Routes>
               <Route path='/' element={<HomeScreen />} />
+              <Route path='/post/:id' element={<PostScreen />} />
             
               <Route path='/admin' element={<LoginScreen />} />
               <Route path='' element={<AdminRoute />}>
