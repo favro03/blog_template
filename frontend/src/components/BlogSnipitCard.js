@@ -9,6 +9,7 @@ const BlogSnipitCard = ({ post }) => {
   const words = blogContent.split(' ');
   const excerpt = words.slice(0, 50).join(' ');
 
+
   return (
     <Card className='my-3 p-3 rounded snipit-card'>
       <Link to={`/post/${post._id}`}>

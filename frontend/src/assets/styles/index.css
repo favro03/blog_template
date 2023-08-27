@@ -150,7 +150,7 @@ main {
   padding: 20px;
   display: flex;
   position: relative;
-  top: -685px;
+  top: -305px;
   flex-direction: column; /* Set the flex direction to column */
   align-items: flex-start; /* Align content to the start of the column */
 }
