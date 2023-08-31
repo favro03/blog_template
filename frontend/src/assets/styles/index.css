@@ -42,15 +42,23 @@ main {
   .review button {
     margin-top: 10px;
   }
-  
-  .carousel-caption {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+
+  .content {
+    padding-top: 70px;
   }
+  
+  
+  /* HEADER */
+  .header {
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    z-index: 100; /* Ensure header is above other content */
+  }
+
+  
+  
 
   /* Hero */
 .hero-container {
@@ -140,18 +148,22 @@ main {
 
 /* END HomePage BLOG Snipits */
 /* HomePage Side Bar */
-.container {
-  padding: 20px; 
+.right-column {
+  position: absolute;
+  top: 525px;
+  width: 300px;
+  height: 1000px;
+  background: orange;
 }
 
-.right-column {
-  height: 970px;
-  background-color: #f0f0f0;
-  padding: 20px;
-  display: flex;
-  position: relative;
-  top: -305px;
-  flex-direction: column; /* Set the flex direction to column */
-  align-items: flex-start; /* Align content to the start of the column */
+
+
+@media (max-width: 768px) {
+  .right-column {
+    position: static; /* Reset position */
+    width: 100%;
+    margin-top: 20px; /* Add margin to create space between components */
+    margin-bottom: 20px; /* Add margin to create space below components */
+  }
 }
 /* END Homepage side bar */

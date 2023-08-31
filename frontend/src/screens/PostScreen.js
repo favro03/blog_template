@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import PostCard from '../components/PostCard';
+import SidePanel from '../components/SidePanel'
 
 const PostScreen = () => {
   const { id } = useParams();
@@ -35,6 +36,7 @@ const PostScreen = () => {
             <Col >
               <PostCard post={data} /> {/* Render the Planneritems component with data */}
             </Col>
+            <SidePanel />
           </Row>
         </>
       ) : (

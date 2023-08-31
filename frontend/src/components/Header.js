@@ -29,7 +29,7 @@ const Header = ({isAdmin}) => {
   const showAdminLinks = location.pathname.startsWith('/admin');
 
   return (
-    <header>
+    <header className='header'>
       <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>

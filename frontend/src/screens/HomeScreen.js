@@ -27,7 +27,7 @@ const HomeScreen = () => {
 
   console.log("Featured Posts:", featuredPosts);
   return (
-    <>
+    <div className='content'>
       <Hero />
       {isLoading ? (
         <Loader />
@@ -44,11 +44,13 @@ const HomeScreen = () => {
                 <BlogSnipitCard post={post} />
               </Col>
             ))}
-            <SidePanel />
+           
+            <SidePanel  />
+            
           </Row>
         </>
       )}
-    </>
+    </div>
   );
 };
 
