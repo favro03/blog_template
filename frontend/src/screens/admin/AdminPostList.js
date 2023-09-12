@@ -49,7 +49,7 @@ const AdminPostList = () => {
 
   return (
     <>
-      <Row className='align-items-center'>
+      <Row className='align-items-center my-5'>
         <Col>
           <h1>Posts</h1>
         </Col>

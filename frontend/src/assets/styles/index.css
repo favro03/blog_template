@@ -167,3 +167,54 @@ main {
   }
 }
 /* END Homepage side bar */
+
+/* POST CARD */
+/* Add this CSS to your component's CSS file or a global CSS file */
+/* Add this CSS to your component's CSS file or a global CSS file */
+.post-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Center vertically */
+}
+
+.image-title-container {
+  display: flex; /* Display the image and title side by side */
+  align-items: center; /* Center vertically within the container */
+  flex: 1; /* Allow the container to grow and take available space */
+  margin-right: 1rem; /* Add spacing between image and title */
+}
+
+.snipit-image {
+  max-width: 100px; /* Adjust the max-width as needed */
+  height: auto;
+}
+
+.title {
+  flex: 1; /* Allow title to grow and take available space */
+}
+
+.author-date-container {
+  display: flex; /* Display author names and date side by side */
+  align-items: center; /* Center vertically within the container */
+  margin-top: 0.5rem; /* Add spacing between title and author/date */
+}
+
+.author-names {
+  flex: 1; /* Allow author names to grow and take available space */
+  display: flex; /* Display author names side by side */
+  align-items: center; /* Center vertically within the author names section */
+}
+
+.line {
+  border: none; /* Remove the border from the individual sections */
+  margin: 0 0.25rem; /* Add spacing between sections */
+}
+
+
+.icon {
+  width: 100px;
+  height: 150px;
+}
+.contact-page {
+  margin-top: 100px;
+}

@@ -9,6 +9,9 @@ import AdminHomeScreen from './screens/admin/AdminHomeScreen';
 import AdminPostList from './screens/admin/AdminPostList';
 import AdminPostEditScreen from './screens/admin/AdminPostEditScreen'
 import PostScreen from './screens/PostScreen'
+import CategoryScreen from './screens/CategoryScreen';
+import AboutScreen from './screens/AboutScreen';
+import ContactPageScreen from './screens/ContactPageScreen';
 
 const App = () => {
   return (
@@ -19,7 +22,9 @@ const App = () => {
             <Routes>
               <Route path='/' element={<HomeScreen />} />
               <Route path='/post/:id' element={<PostScreen />} />
-            
+              <Route path='/category/:category' element={<CategoryScreen />} />
+              <Route path='/about' element={<AboutScreen />} />
+              <Route path='/contact' element={<ContactPageScreen />} />
               <Route path='/admin' element={<LoginScreen />} />
               <Route path='' element={<AdminRoute />}>
                 <Route path='/admin/home' element={<AdminHomeScreen />} />
