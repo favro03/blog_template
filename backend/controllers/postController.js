@@ -24,23 +24,42 @@ const getPostById = asyncHandler(async (req, res) => {
     throw new Error('Post not found');
   }
 });
-
 // @desc    Create a post
 // @route   POST /api/posts
 // @access  Private/Admin
 const createPost = asyncHandler(async (req, res) => {
+  // Extract the form data from the request body
+  const {
+    title,
+    authorFirstName,
+    authorLastName,
+    date,
+    blog,
+    category,
+    isFeature,
+    isArchive
+  } = req.body;
+
+  // Create a new Post object with the form data
   const post = new Post({
-    title: '',
-    authorFirstName: '',
-    authorLastName: '',
-    date: '',
-    blog:'',
-    category: '',
-    isFeature: true,
-    isArchive: false
+    title,
+    authorFirstName,
+    authorLastName,
+    date,
+    blog,
+    category,
+    isFeature,
+    isArchive
   });
-  const createdPost = await post.save();
-  res.status(201).json(createdPost);
+
+  try {
+    // Save the post to the database
+    const createdPost = await post.save();
+    res.status(201).json(createdPost);
+  } catch (error) {
+    // Handle any errors that occur during the save operation
+    res.status(500).json({ message: 'Error creating post', error: error.message });
+  }
 });
 
 // @desc    Update a post

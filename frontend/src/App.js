@@ -12,6 +12,7 @@ import PostScreen from './screens/PostScreen'
 import CategoryScreen from './screens/CategoryScreen';
 import AboutScreen from './screens/AboutScreen';
 import ContactPageScreen from './screens/ContactPageScreen';
+import AdminPostCreateScreen from './screens/admin/AdminPostCreateScreen'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
                 <Route path='/admin/home' element={<AdminHomeScreen />} />
                 <Route path='/admin/posts' element={<AdminPostList />} />
                 <Route path='/admin/posts/:id/edit' element={<AdminPostEditScreen />} />
+                <Route path='/admin/createnew' element={<AdminPostCreateScreen />} />
               </Route>
           </Routes>
           </Container>

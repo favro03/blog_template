@@ -1,7 +1,7 @@
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 // import Paginate from '../../components/Paginate';
@@ -9,12 +9,12 @@ import {
   useGetPostsQuery,
   useDeletePostMutation,
   useCreatePostMutation,
-} from '../../slices/postsApiSlice';
+} from '../../slices/postsApiSlice';  
 import { toast } from 'react-toastify';
 
 const AdminPostList = () => {
   // const { pageNumber } = useParams();
-
+  const navigate = useNavigate();
   const { data, isLoading, error, refetch } = useGetPostsQuery({
    
   });
@@ -37,14 +37,16 @@ const AdminPostList = () => {
     useCreatePostMutation();
 
   const createPostHandler = async () => {
-    if (window.confirm('Are you sure you want to create a new post?')) {
-      try {
-        await createPost();
-        refetch();
-      } catch (err) {
-        toast.error(err?.data?.message || err.error);
-      }
-    }
+    const newUrl = '/admin/createnew';
+    navigate(newUrl);
+    // if (window.confirm('Are you sure you want to create a new post?')) {
+    //   try {
+    //     await createPost();
+    //     refetch();
+    //   } catch (err) {
+    //     toast.error(err?.data?.message || err.error);
+    //   }
+    // }
   };
 
   return (
